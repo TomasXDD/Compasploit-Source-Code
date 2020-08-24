@@ -1,4 +1,21 @@
-local gui = Instance.new("BillboardGui");
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "n" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+print('Loaded')
+print('Press "n" to noclip')
+gui = Instance.new("BillboardGui");
 gui.Name = "";
 gui.AlwaysOnTop = true;
 gui.LightInfluence = 0;
